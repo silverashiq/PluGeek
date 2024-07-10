@@ -66,7 +66,7 @@ return (
 
       {nextPage && (
         <div className='flex justify-center my-5'>
-          <Button onClick={loadMoreGames} color="warning" variant="flat">More Games . . .</Button>
+          <Button onClick={loadMoreGames} color="warning" variant="flat">Load More Games . . .</Button>
         </div>
       )}
 
