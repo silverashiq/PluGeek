@@ -42,15 +42,15 @@ function NavbarCM() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand > 
-          <IoLogoGameControllerB size={40} className="text-[#c4841d]"/>
-          <p className="font-bold text-inherit text-[#c4841d]">PluGeek</p>
+          <IoLogoGameControllerB size={40} className="text-yellow-700"/>
+          <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
-          <IoLogoGameControllerB size={40} className="text-[#c4841d]"/>
-          <p className="font-bold text-inherit text-[#c4841d]">PluGeek</p>
+          <IoLogoGameControllerB size={40} className="text-yellow-700"/>
+          <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
         </NavbarBrand>
 {menuItems.map((menu, index) => (
                 <NavbarItem key={index}>
@@ -64,7 +64,9 @@ function NavbarCM() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+        <Button as={Link} color="primary" href="#" variant="flat">
+            Log In
+          </Button>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="warning" href="#" variant="flat">
@@ -74,7 +76,7 @@ function NavbarCM() {
         <NavbarItem >
         <Dropdown>
             <DropdownTrigger>
-            <Avatar isBordered radius="sm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8_hrcriiD730WmTAbyyTYRECqKEiCliQlNg&s" />
+            <Avatar isBordered radius="sm" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/golden-gaming-logo-esports-design-template-afc25edd053b480c109341785f2ace1e_screen.jpg?ts=1698302201" />
             </DropdownTrigger>
             <DropdownMenu>
                 <DropdownItem >Profile</DropdownItem>
