@@ -31,14 +31,12 @@ function Trending() {
     <>
       <div className="mb-16">
         <h1 className="my-11 text-center text-4xl text-gray-800 font-bold">
-          {" "}
           Trending Games to play
         </h1>
 
         <Swiper
           modules={[Navigation, Pagination]}
           className="mb-7"
-          // centeredSlides={true}
           spaceBetween={50}
           slidesPerView={5}
           loop={true}
@@ -46,14 +44,39 @@ function Trending() {
           pagination={{ clickable: true }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+            // when window width is >= 1280px
+            1280: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
         >
-          <div className="flex container mx-auto gap-7 flex-wrap my-4 justify-center">
-            {gameList.map((game) => (
-              <SwiperSlide>
-                <GameCard key={game.id} gameInfo={game} />
-              </SwiperSlide>
-            ))}
-          </div>
+          {gameList.map((game) => (
+            <SwiperSlide key={game.id}>
+              <GameCard gameInfo={game} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>
