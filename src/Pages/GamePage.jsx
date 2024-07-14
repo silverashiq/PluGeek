@@ -43,30 +43,35 @@ function GamePage() {
 
   return (
     <>
-        {loading ? (
-          <div className="w-[100%] h-[100vh] flex justify-center items-center">
-            <Progress
-              size="sm"
-              isIndeterminate
-              aria-label="Loading..."
-              className="max-w-md h-auto"
-            />
-          </div>
-        ) : (
-          <div className="flex container mx-auto gap-7 flex-wrap my-4 justify-center">
-            {gameList.map((game) => (
-              <GameCard key={game.id} gameInfo={game} />
-            ))}
-          </div>
-        )}
 
-        {nextPage && (
-          <div className="flex justify-center my-5">
-            <Button onClick={loadMoreGames} color="warning" variant="flat">
-              More Games . . .
-            </Button>
-          </div>
-        )}
+    <div className='bg-slate-900 py-1'>
+    <h1 className='my-11 text-center text-4xl text-slate-100 font-semibold'> All Games </h1>
+
+{loading ? (
+  <div className="w-[100%] h-[100vh] flex justify-center items-center">
+    <Progress
+      size="sm"
+      isIndeterminate
+      aria-label="Loading..."
+      className="max-w-md h-auto"
+    />
+  </div>
+) : (
+  <div className="flex container mx-auto gap-7 flex-wrap my-4 justify-center">
+    {gameList.map((game) => (
+      <GameCard key={game.id} gameInfo={game} />
+    ))}
+  </div>
+)}
+
+{nextPage && (
+  <div className="flex justify-center my-5">
+    <Button onClick={loadMoreGames} color="warning" variant="flat">
+      More Games . . .
+    </Button>
+  </div>
+)}
+    </div>
     </>
   )
 }

@@ -10,7 +10,7 @@ export default function App() {
   
   return (
     <>
-      <div className="bg-slate-200">
+      <div className="bg-slate-100">
         <NavbarCM />
         <HomePage />
         <GamePage/>
