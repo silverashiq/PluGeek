@@ -26,6 +26,7 @@ function GamePage() {
       }, []);
     
       const loadMoreGames = async () => {
+        event.preventDefault();
         if (nextPage) {
           setLoading(true);
           await fetch(nextPage)
