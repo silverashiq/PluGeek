@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import GameCard from "../components/GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import { Progress } from "@nextui-org/react";
 
 function Trending() {
@@ -46,13 +46,16 @@ function Trending() {
           </div>
         ) : (
           <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Autoplay]}
           className="mb-7"
           spaceBetween={50}
           slidesPerView={5}
           loop={true}
           navigation
-          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 500,
+            disableOnInteraction: false,
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
