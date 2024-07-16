@@ -6,6 +6,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Progress } from "@nextui-org/react";
 
 function Trending() {
   const [gameList, setGamelist] = useState([]);
@@ -34,7 +35,17 @@ function Trending() {
           Trending Games to play
         </h1>
 
-        <Swiper
+        {loading ? (
+          <div className="w-[100%] h-20 flex justify-center items-center">
+            <Progress
+              size="sm"
+              isIndeterminate
+              aria-label="Loading..."
+              className="max-w-md h-auto"
+            />
+          </div>
+        ) : (
+          <Swiper
           modules={[Navigation, Pagination]}
           className="mb-7"
           spaceBetween={50}
@@ -78,6 +89,9 @@ function Trending() {
             </SwiperSlide>
           ))}
         </Swiper>
+        )}
+
+
       </div>
     </>
   );
