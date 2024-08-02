@@ -1,7 +1,6 @@
 import NavbarCM from "./components/NavbarCM";
-import GamePage from "./Pages/GamePage";
 import Footer from "./components/Footer";
-import HomePage from "./Pages/HomePage";
+import { Outlet } from "react-router-dom";
 
 
 
@@ -12,8 +11,7 @@ export default function App() {
     <>
       <div className="bg-slate-100">
         <NavbarCM />
-        <HomePage />
-        <GamePage/>
+        <Outlet/>
         <Footer />
       </div>
     </>
