@@ -21,12 +21,12 @@ function AboutUs() {
     <section class="mb-12">
       <h3 class="text-3xl font-bold mb-4 text-[#a16207]">Meet the Team</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-400 p-6 rounded-lg">
+        <div class="bg-gray-700 p-6 rounded-lg">
           <img src="https://shorturl.at/dDG8Y" alt="Team Member" class="w-auto h-64 object- rounded-lg mb-4"></img>
           <h4 class="text-2xl font-bold mb-2 text-white">Silver Ashiq</h4>
           <p class="text-gray-200">Lead Developer</p>
         </div>
-        <div class="bg-gray-400 p-6 rounded-lg">
+        <div class="bg-gray-700 p-6 rounded-lg">
           <img src="https://shorturl.at/QACAq" alt="Team Member" class="w-auto h-64 object-cover rounded-lg mb-4"></img>
           <h4 class="text-2xl font-bold mb-2 text-white">Shamaun Nabi</h4>
           <p class="text-gray-200">Mentor</p>
