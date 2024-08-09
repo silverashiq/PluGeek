@@ -46,15 +46,15 @@ export const myRouter=createBrowserRouter([
                 element:<SignUp/>,
             },
 
-            // {
-            //     path:"/games/:id",
-            //     element:<SingleGame/>,
-            // },
+            {
+                path:"games/:id",
+                element:<SingleGame/>,
+            },
 
-            // {
-            //     path:"/*",
-            //     element:<NotFound/>,
-            // },
+            {
+                path:"*",
+                element:<NotFound/>,
+            },
 
         ]
     }

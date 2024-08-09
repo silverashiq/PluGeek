@@ -23,9 +23,9 @@ function NavbarCM() {
 
   const menuItems = [
     { name: "Home", href: "/" },
-    { name: "All Games", href: "games" },
-    { name: "About Us", href: "about" },
-    { name: "Contact Us", href: "contact" },
+    { name: "All Games", href: "/games" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -59,12 +59,12 @@ function NavbarCM() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Button as={Link} color="primary" href="login" variant="flat">
+          <Button as={Link} color="primary" href="/login" variant="flat">
             Log In
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" href="signup" variant="flat">
+          <Button as={Link} color="warning" href="/signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
