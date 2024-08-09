@@ -23,6 +23,7 @@ function Trending() {
           setGamelist(data.results.slice(0, 20));
         });
       setLoading(false);
+      
     };
 
     fetchData();

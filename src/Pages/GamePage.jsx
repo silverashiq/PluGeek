@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button } from "@nextui-org/react";
 import { Progress } from "@nextui-org/react";
 import GameCard from "../components/GameCard";
+import { data } from 'autoprefixer';
 
 function GamePage() {
     const [gameList, setGamelist] = useState([]);
@@ -20,6 +21,8 @@ function GamePage() {
               setNextPage(data.next);
             });
           setLoading(false);
+          console.log(data);
+          
         };
     
         fetchData();

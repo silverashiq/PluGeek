@@ -14,12 +14,12 @@ function AboutUs() {
     <section class="mb-12">
       <h3 class="text-3xl font-bold mb-4 text-[#a16207]">Our Story</h3>
       <p class="text-lg leading-relaxed">
-        PluGeek was founded in 2024 by a Syed Ashiqur Rahman who shares a deep love for games. From humble beginnings as a small indie studio, the site promises to grow into a thriving community of gamers and creators. Our journey has been fueled by our commitment to quality, creativity, and the endless possibilities of the gaming world.
+        PluGeek was founded in 2024 by Syed Ashiqur Rahman who shares a deep love for games. From humble beginnings as a small indie studio, the site promises to grow into a thriving community of gamers and creators. Our journey has been fueled by our commitment to quality, creativity, and the endless possibilities of the gaming world.
       </p>
     </section>
 
     <section class="mb-12">
-      <h3 class="text-3xl font-bold mb-4 text-[#a16207]">Meet the Team</h3>
+      <h3 class="text-3xl font-bold mb-4 text-[#a16207]">Meet Our Team</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-gray-700 p-6 rounded-lg">
           <img src="https://shorturl.at/dDG8Y" alt="Team Member" class="w-auto h-64 object- rounded-lg mb-4"></img>
