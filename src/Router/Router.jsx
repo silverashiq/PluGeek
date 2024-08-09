@@ -22,39 +22,39 @@ export const myRouter=createBrowserRouter([
             },
 
             {
-                path:"/games",
+                path:"games",
                 element:<GamePage/>,
             },
 
             {
-                path:"/about",
+                path:"about",
                 element:<AboutUs/>,
             },
 
             {
-                path:"/contact",
+                path:"contact",
                 element:<ContactUs/>,
             },
 
             {
-                path:"/login",
+                path:"login",
                 element:<LogIn/>,
             },
 
             {
-                path:"/signup",
+                path:"signup",
                 element:<SignUp/>,
             },
 
             // {
-            //     path:"/:id",
+            //     path:"/games/:id",
             //     element:<SingleGame/>,
             // },
 
-            {
-                path:"/*",
-                element:<NotFound/>,
-            },
+            // {
+            //     path:"/*",
+            //     element:<NotFound/>,
+            // },
 
         ]
     }
