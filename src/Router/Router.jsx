@@ -7,6 +7,7 @@ import LogIn from "../Pages/LogIn";
 import SignUp from "../Pages/SignUp";
 import SingleGame from "../Pages/SingleGame";
 import App from "../App";
+import NotFound from "../Pages/NotFound";
 
 
 
@@ -45,10 +46,17 @@ export const myRouter=createBrowserRouter([
                 element:<SignUp/>,
             },
 
+            // {
+            //     path:"/:id",
+            //     element:<SingleGame/>,
+            // },
+
             {
-                path:"/:id",
-                element:<SingleGame/>,
+                path:"/*",
+                element:<NotFound/>,
             },
+
         ]
     }
 ])
+
