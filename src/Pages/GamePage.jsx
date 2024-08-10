@@ -31,7 +31,7 @@ function GamePage() {
       const loadMoreGames = async () => {
         event.preventDefault();
         if (nextPage) {
-          setLoading(true);
+          setLoading(false);
           await fetch(nextPage)
             .then((response) => response.json())
             .then((data) => {

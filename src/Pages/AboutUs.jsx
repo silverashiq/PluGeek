@@ -29,7 +29,7 @@ function AboutUs() {
         <div class="bg-gray-700 p-6 rounded-lg">
           <img src="https://shorturl.at/QACAq" alt="Team Member" class="w-auto h-64 object-cover rounded-lg mb-4"></img>
           <h4 class="text-2xl font-bold mb-2 text-white">Shamaun Nabi</h4>
-          <p class="text-gray-200">Mentor</p>
+          <p class="text-gray-200">Project Manager</p>
         </div>
 
       </div>

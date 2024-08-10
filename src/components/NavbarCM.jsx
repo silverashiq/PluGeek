@@ -17,6 +17,7 @@ import {
 } from "@nextui-org/react";
 
 import { IoLogoGameControllerB } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 function NavbarCM() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,15 +39,19 @@ function NavbarCM() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <IoLogoGameControllerB size={40} className="text-yellow-700" />
-          <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
+        <a href="/" className="flex items-center">
+        <IoLogoGameControllerB size={40} className="text-yellow-700" />
+        <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
+        </a>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
-          <IoLogoGameControllerB size={40} className="text-yellow-700" />
-          <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
+        <a href="/" className="flex items-center">
+        <IoLogoGameControllerB size={40} className="text-yellow-700" />
+        <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
+        </a>
         </NavbarBrand>
         {menuItems.map((menu, index) => (
           <NavbarItem key={index}>
