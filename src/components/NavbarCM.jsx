@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion"
 import {
   Navbar,
   NavbarBrand,
@@ -46,33 +47,48 @@ function NavbarCM() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarBrand>
+      
+
+
+    <NavbarContent className="hidden sm:flex gap-4" justify="center">
+    <motion.div whileHover={{ scale: 1.15 }}>
+    <NavbarBrand>
         <a href="/" className="flex items-center">
         <IoLogoGameControllerB size={40} className="text-yellow-700" />
         <p className="font-bold text-inherit text-yellow-700">PluGeek</p>
         </a>
         </NavbarBrand>
+    </motion.div>
         {menuItems.map((menu, index) => (
-          <NavbarItem key={index}>
+          <motion.div whileHover={{ scale: 1.15 }}>
+                      <NavbarItem key={index}>
             <Link color="foreground" href={menu.href}>
               {menu.name}
             </Link>
           </NavbarItem>
+          </motion.div>
         ))}
       </NavbarContent>
 
+
       <NavbarContent justify="end">
+        <motion.div whileHover={{ scale: 1.15 }}>
         <NavbarItem className="hidden lg:flex">
           <Button as={Link} color="primary" href="/login" variant="flat">
             Log In
           </Button>
         </NavbarItem>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.15 }}>
         <NavbarItem>
           <Button as={Link} color="warning" href="/signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.15 }}>
         <NavbarItem>
           <Dropdown>
             <DropdownTrigger>
@@ -90,6 +106,7 @@ function NavbarCM() {
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
+        </motion.div>
       </NavbarContent>
 
       <NavbarMenu>

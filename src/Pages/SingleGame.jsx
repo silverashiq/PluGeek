@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Button, Progress } from "@nextui-org/react";
+import { motion } from "framer-motion"
 
 function SingleGame() {
   const { id } = useParams();
@@ -74,7 +75,9 @@ function SingleGame() {
                                 .join(", ")
                             : "Genre Unavailable"}  
                         </span>
-                        <NavLink to={singleList.website} className="bg-blue-600 text-2xl px-4 py-2 rounded-md text-white">BUY</NavLink>
+                            <motion.div whileHover={{ scale: 1.15 }}>
+                            <NavLink to={singleList.website} className="bg-blue-600 text-2xl px-4 py-2 rounded-md text-white">BUY</NavLink>
+                            </motion.div>
                       </div>
 
                       <p className="mt-4 text-gray-300 text-lg leading-relaxed"> <span className="text-white font-semibold">Description - </span>
