@@ -8,6 +8,8 @@ import SignUp from "../Pages/SignUp";
 import SingleGame from "../Pages/SingleGame";
 import App from "../App";
 import NotFound from "../Pages/NotFound";
+import Terms from "../Pages/Terms";
+import Forgot from "../Pages/Forgot";
 
 
 
@@ -49,6 +51,16 @@ export const myRouter=createBrowserRouter([
             {
                 path:"games/:id",
                 element:<SingleGame/>,
+            },
+
+            {
+                path:"forgot",
+                element:<Forgot/>,
+            },
+
+            {
+                path:"terms",
+                element:<Terms/>,
             },
 
             {

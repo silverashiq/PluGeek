@@ -72,7 +72,7 @@ function SingleGame() {
                             ? singleList.genres
                                 .map((genre) => genre.name)
                                 .join(", ")
-                            : "Genre Unavailable"}
+                            : "Genre Unavailable"}  
                         </span>
                         <NavLink to={singleList.website} className="bg-blue-600 text-2xl px-4 py-2 rounded-md text-white">BUY</NavLink>
                       </div>
