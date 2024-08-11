@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/react";
 import { Progress } from "@nextui-org/react";
 import GameCard from "../components/GameCard";
 import { data } from 'autoprefixer';
+import { motion } from "framer-motion"
 
 function GamePage() {
     const [gameList, setGamelist] = useState([]);
@@ -69,10 +70,12 @@ function GamePage() {
 )}
 
 {nextPage && (
-  <div className="flex justify-center my-5">
+  <div className="flex justify-center my-7">
+    <motion.div whileHover={{ scale: 1.1 }}>
     <Button onClick={loadMoreGames} color="warning" variant="flat">
       More Games . . .
     </Button>
+    </motion.div>
   </div>
 )}
     </div>

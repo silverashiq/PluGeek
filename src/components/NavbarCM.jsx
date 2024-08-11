@@ -98,12 +98,14 @@ function NavbarCM() {
                 src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/golden-gaming-logo-esports-design-template-afc25edd053b480c109341785f2ace1e_screen.jpg?ts=1698302201"
               />
             </DropdownTrigger>
+
             <DropdownMenu>
               <DropdownItem>Profile</DropdownItem>
               <DropdownItem>Library</DropdownItem>
               <DropdownItem>Settings</DropdownItem>
               <DropdownItem>Log out</DropdownItem>
             </DropdownMenu>
+
           </Dropdown>
         </NavbarItem>
         </motion.div>
