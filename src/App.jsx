@@ -1,19 +1,15 @@
-import NavbarCM from "./components/NavbarCM";
-import Footer from "./components/Footer";
-import { Outlet } from "react-router-dom";
-
-
+import MainSite from "./MainSite";
+import { NextUIProvider } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
 
-  
+const navigate=useNavigate();
   return (
     <>
-      <div className="bg-slate-100">
-        <NavbarCM />
-        <Outlet/>
-        <Footer />
-      </div>
+      <NextUIProvider navigate={navigate}>
+        <MainSite />
+      </NextUIProvider>
     </>
   );
 }
