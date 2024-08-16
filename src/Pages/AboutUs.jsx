@@ -26,7 +26,7 @@ function AboutUs() {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-gray-700 p-6 rounded-lg">
           <img src={Ashiq} alt="Team Member" class="w-auto h-64 object- rounded-lg mb-4"></img>
-          <h4 class="text-2xl font-bold mb-2 text-white">Silver Ashiq</h4>
+          <h4 class="text-2xl font-bold mb-2 text-white">Solver Silver</h4>
           <p class="text-gray-200">Lead Developer</p>
         </div>
         <div class="bg-gray-700 p-6 rounded-lg">
