@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion"
 import {
   Navbar,
@@ -17,10 +17,13 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 
+
 import { IoLogoGameControllerB } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import MyContext from "../Context/MyContext";
 
 function NavbarCM() {
+  const { user, setUser } = useContext(MyContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
@@ -72,44 +75,47 @@ function NavbarCM() {
 
 
       <NavbarContent justify="end">
-        <motion.div whileHover={{ scale: 1.15 }}>
-        <NavbarItem className="hidden lg:flex">
+
+      <motion.div whileHover={{ scale: 1.15 }}>
+        <NavbarItem className="lg:flex">
           <Button as={Link} color="primary" href="/login" variant="flat">
             Log In
           </Button>
         </NavbarItem>
-        </motion.div>
-
-        <motion.div whileHover={{ scale: 1.15 }}>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.15 }}>
         <NavbarItem>
           <Button as={Link} color="warning" href="/signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
-        </motion.div>
+      </motion.div>
+  
+    <motion.div whileHover={{ scale: 1.15 }} className="hidden" id="portalBox">
+      <NavbarItem>
+        <Dropdown>
+          <DropdownTrigger>
+            <Avatar
+              isBordered
+              radius="sm"
+              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/golden-gaming-logo-esports-design-template-afc25edd053b480c109341785f2ace1e_screen.jpg?ts=1698302201"
+            />
+          </DropdownTrigger>
 
-        <motion.div whileHover={{ scale: 1.15 }}>
-        <NavbarItem>
-          <Dropdown>
-            <DropdownTrigger>
-              <Avatar
-                isBordered
-                radius="sm"
-                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/golden-gaming-logo-esports-design-template-afc25edd053b480c109341785f2ace1e_screen.jpg?ts=1698302201"
-              />
-            </DropdownTrigger>
+          <DropdownMenu>
+            <DropdownItem>Profile</DropdownItem>
+            <DropdownItem>Library</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>
+              Logout
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </NavbarItem>
+    </motion.div>
 
-            <DropdownMenu>
-              <DropdownItem>Profile</DropdownItem>
-              <DropdownItem>Library</DropdownItem>
-              <DropdownItem>Settings</DropdownItem>
-              <DropdownItem>Log out</DropdownItem>
-            </DropdownMenu>
+</NavbarContent>
 
-          </Dropdown>
-        </NavbarItem>
-        </motion.div>
-      </NavbarContent>
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
@@ -136,3 +142,53 @@ function NavbarCM() {
 }
 
 export default NavbarCM;
+
+
+
+{/* <div>
+<NavbarContent justify="end">
+  {!user ? (
+    <>
+      <motion.div whileHover={{ scale: 1.15 }}>
+        <NavbarItem className="lg:flex">
+          <Button as={Link} color="primary" href="/login" variant="flat">
+            Log In
+          </Button>
+        </NavbarItem>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.15 }}>
+        <NavbarItem>
+          <Button as={Link} color="warning" href="/signup" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </motion.div>
+    </>
+  ) : (
+    <motion.div whileHover={{ scale: 1.15 }}>
+      <NavbarItem>
+        <Dropdown>
+          <DropdownTrigger>
+            <Avatar
+              isBordered
+              radius="sm"
+              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/golden-gaming-logo-esports-design-template-afc25edd053b480c109341785f2ace1e_screen.jpg?ts=1698302201"
+            />
+          </DropdownTrigger>
+
+          <DropdownMenu>
+            <DropdownItem>Profile</DropdownItem>
+            <DropdownItem>Library</DropdownItem>
+            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem>
+            <button onClick={() => setUser(null)}  aria-label="Logout">
+              Logout
+            </button>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </NavbarItem>
+    </motion.div>
+  )}
+</NavbarContent>
+</div> */}

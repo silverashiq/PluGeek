@@ -7,12 +7,10 @@ import { RouterProvider } from "react-router-dom";
 import { myRouter } from "./Router/Router";
 
 
-
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={myRouter}> 
-        <App />
+    <RouterProvider router={myRouter}>
+    <App />
     </RouterProvider>
   </React.StrictMode>
 );

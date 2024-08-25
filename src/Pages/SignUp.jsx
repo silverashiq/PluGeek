@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { userGoogle, userRegister } from "../Firebas";
 
 
 function SignUp() {
@@ -11,7 +12,18 @@ function SignUp() {
     formState: { errors },
   } = useForm();
 
-  const mySubmit = (data) => console.log(data);
+  // const onSubmit = (data) => console.log(data);
+
+  const [userEmail, setUserEmail] = useState("");
+  function onSubmitData(data) {
+    const { email, password } = data;
+    userRegister(email, password)
+  }
+
+  function googleLogin(){
+    userGoogle()
+  }
+  
 
   return (
     <>
@@ -20,35 +32,25 @@ function SignUp() {
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full space-y-8 mt-12">
             <div>
               <h2 className="text-3xl font-bold text-center">
-                Sign-up for an account
+                Sign Up for an account
               </h2>
             </div>
-            <form onSubmit={handleSubmit(mySubmit)} className="mt-8 space-y-6">
+            <form
+              onSubmit={handleSubmit(onSubmitData)}
+              className="mt-8 space-y-6"
+            >
               <div className="rounded-md shadow-sm -space-y-px">
-                <div>
-                  <label for="signup-name" className="sr-only">
-                    Full Name
-                  </label>
-                  <input
-                    {...register("Name")}
-                    id="signup-name"
-                    type="text"
-                    required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Full Name"
-                  ></input>
-                </div>
                 <div>
                   <label for="signup-email" className="sr-only">
                     Email address
                   </label>
                   <input
-                    {...register("Email")}
+                    {...register("email")}
                     id="signup-email"
                     type="email"
-                    autocomplete="email"
+                    autoComplete="email"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Email address"
                   ></input>
                 </div>
@@ -57,10 +59,10 @@ function SignUp() {
                     Password
                   </label>
                   <input
-                    {...register("Password")} 
+                    {...register("password")}
                     id="signup-password"
                     type="password"
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                     required
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Password"
@@ -71,25 +73,26 @@ function SignUp() {
                     Confirm Password
                   </label>
                   <input
-                    {...register("Confirm Password")}
-                    id="signup-password"
+                    {...register("confirmPassword")}
+                    id="confirm-password"
                     type="password"
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className=" appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Confirm Password"
                   ></input>
                 </div>
               </div>
               <div className="flex items-center">
                 <input
-                  {...register("Confirmed Terms")}
+                  {...register("agreeTerms")}
                   id="terms-checkbox"
                   type="checkbox"
                   required
                   className=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
                 ></input>
                 <label
+                  required
                   for="terms-checkbox"
                   className="ml-2 text-sm font-normal text-white"
                 >
@@ -110,6 +113,10 @@ function SignUp() {
                   className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#a16207] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   Register
+                </button>
+
+                <button onClick={googleLogin} className="group relative w-full flex justify-center py-2 mt-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-700 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Sign Up with Google
                 </button>
               </motion.div>
             </form>

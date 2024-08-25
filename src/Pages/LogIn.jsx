@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion"
+import { userGoogle, userLogin } from "../Firebas";
 
 
 function LogIn() {
@@ -11,7 +12,14 @@ function LogIn() {
     formState: { errors },
   } = useForm();
 
-  const mySubmit = (data) => console.log(data);
+  function onSubmitData(data) {
+    const { email, password } = data;
+    userLogin(email, password)
+  }
+
+  function googleLogin(){
+    userGoogle()
+  }
 
   return (
     <>
@@ -23,14 +31,14 @@ function LogIn() {
                 Log-in to your account
               </h2>
             </div>
-            <form onSubmit={handleSubmit(mySubmit)} className="mt-8 space-y-6">
+            <form onSubmit={handleSubmit(onSubmitData)} className="mt-8 space-y-6">
               <div className="rounded-md shadow-sm -space-y-px">
                 <div>
                   <label htmlFor="login-email" className="sr-only">
                     Email address
                   </label>
                   <input
-                    {...register("Email")}
+                    {...register("email")}
                     id="login-email"
                     type="email"
                     autoComplete="email"
@@ -44,7 +52,7 @@ function LogIn() {
                     Password
                   </label>
                   <input
-                    {...register("Password")}
+                    {...register("password")}
                     id="login-password"
                     type="password"
                     autoComplete="current-password"
@@ -92,10 +100,11 @@ function LogIn() {
 
                   <motion.div whileHover={{ scale: 1.05 }}>
                   <button
+                  onClick={googleLogin}
                   type="button"
                   className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  Sign in with Google
+                  Sign In with Google
                 </button>
                   </motion.div>
               </div>
